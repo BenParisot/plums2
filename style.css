@@ -1,0 +1,26 @@
+body {
+    height: 6000px;
+    background: linear-gradient(
+      to bottom,
+      pink,
+      purple
+    );
+  }
+
+#barrow-svg {
+  position: fixed;
+  z-index: 0;
+  /* top: 50%;
+  left: 50%; */
+  /* width: 1500px;
+  height: 1500px; */
+  /* margin: -75px 0 0 -75px; */
+}
+
+#chicken-svg {
+  position: fixed;
+  top: 40px;
+  left: -50px;
+  z-index: 50;
+
+}

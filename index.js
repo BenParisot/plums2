@@ -1,5 +1,4 @@
-const tablePath = document.querySelector('#table');
-console.log('table path', document.querySelector('#table'));
+const tablePath = document.querySelector('.barrow');
 const tablePathLength = tablePath.getTotalLength();
 // Make very long dashes (the length of the path itself)
 tablePath.style.strokeDasharray = tablePathLength + ' ' + tablePathLength;
@@ -25,5 +24,3 @@ if (scrollPercentage >= 0.99) {
 }
 
 });
-
-const table = 
