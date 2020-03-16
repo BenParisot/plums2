@@ -1,4 +1,4 @@
-const tablePath = document.querySelector('.barrow');
+const tablePath = document.querySelector('#barrow');
 const tablePathLength = tablePath.getTotalLength();
 // Make very long dashes (the length of the path itself)
 tablePath.style.strokeDasharray = tablePathLength + ' ' + tablePathLength;
