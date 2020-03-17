@@ -1,10 +1,24 @@
 body {
     height: 6000px;
-    background: linear-gradient(
+    /* background: linear-gradient(
       to bottom,
       pink,
       purple
-    );
+    ); */
+  }
+
+  .main {
+    display: flex;
+  }
+
+  .svgs {
+    width: 50%;
+  }
+
+  .poem p {
+    font-size: 28px;
+    margin-top: 250px;
+    height: 500px;
   }
 
 #barrow-svg {
@@ -29,6 +43,9 @@ body {
   position: fixed;
   top: 40px;
   left: -185px;
-  z-index: 50;
+  z-index: 30;
+}
 
+.poem {
+  left: 100px;
 }

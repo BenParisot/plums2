@@ -1,26 +1,36 @@
-const tablePath = document.querySelector('#barrow');
-const tablePathLength = tablePath.getTotalLength();
+const barrowPath = document.querySelector('#barrow');
+const barrowPathLength = barrowPath.getTotalLength();
+
+const chickenOnePath = document.querySelector('#chicken');
+const chickenOnePathLength = chickenOnePath.getTotalLength();
+
+const chickenTwoPath = document.querySelector('#chicken2');
+console.log('chicken 2', chickenTwoPath);
+const chickenTwoPathLength = chickenTwoPath.getTotalLength();
 // Make very long dashes (the length of the path itself)
-tablePath.style.strokeDasharray = tablePathLength + ' ' + tablePathLength;
+barrowPath.style.strokeDasharray = barrowPathLength + ' ' + barrowPathLength;
+chickenOnePath.style.strokeDasharray = chickenOnePathLength + ' ' + chickenOnePathLength;
+chickenTwoPath.style.strokeDasharray = chickenTwoPathLength + ' ' + chickenTwoPathLength;
 
 // Offset the dashes so the it appears hidden entirely
-tablePath.style.strokeDashoffset = tablePathLength;
+barrowPath.style.strokeDashoffset = barrowPathLength;
+chickenOnePath.style.strokeDashoffset = chickenOnePathLength;
+chickenTwoPath.style.strokeDashoffset = chickenTwoPathLength; 
 
 // When the page scrolls...
-window.addEventListener("scroll", function(e) {
+window.addEventListener("scroll", function (e) {
 
-// What % down is it? 
-var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-  
-// Length to offset the dashes
-var drawLength = tablePathLength * scrollPercentage;
+  // What % down is it? 
+  var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
-// Draw in reverse
-tablePath.style.strokeDashoffset = tablePathLength - drawLength;
-if (scrollPercentage >= 0.99) {
-  tablePath.style.strokeDasharray = "none";
-} else {
-  tablePath.style.strokeDasharray = tablePathLength + ' ' + tablePathLength;
-}
+  // Length to offset the dashes
+  var barrowDrawLength = barrowPathLength * scrollPercentage;
 
+  // Draw in reverse
+  barrowPath.style.strokeDashoffset = barrowPathLength - barrowDrawLength;
+  if (scrollPercentage >= 0.99) {
+    barrowPath.style.strokeDasharray = "none";
+  } else {
+    barrowPath.style.strokeDasharray = barrowPathLength + ' ' + barrowPathLength;
+  }
 });
