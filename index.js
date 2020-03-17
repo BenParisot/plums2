@@ -5,7 +5,6 @@ const chickenOnePath = document.querySelector('#chicken');
 const chickenOnePathLength = chickenOnePath.getTotalLength();
 
 const chickenTwoPath = document.querySelector('#chicken2');
-console.log('chicken 2', chickenTwoPath);
 const chickenTwoPathLength = chickenTwoPath.getTotalLength();
 // Make very long dashes (the length of the path itself)
 barrowPath.style.strokeDasharray = barrowPathLength + ' ' + barrowPathLength;
@@ -22,12 +21,16 @@ window.addEventListener("scroll", function (e) {
 
   // What % down is it? 
   var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
+  
   // Length to offset the dashes
   var barrowDrawLength = barrowPathLength * scrollPercentage;
+  var chickenOneDrawLength = chickenOnePathLength * scrollPercentage;
+  var chickenTwoDrawLength = chickenTwoPathLength * scrollPercentage;
 
   // Draw in reverse
   barrowPath.style.strokeDashoffset = barrowPathLength - barrowDrawLength;
+  chickenOnePath.style.strokeDashoffset = chickenOnePathLength - chickenOneDrawLength;
+  chickenTwoPath.style.strokeDashoffset = chickenTwoPathLength - chickenTwoDrawLength;
   if (scrollPercentage >= 0.99) {
     barrowPath.style.strokeDasharray = "none";
   } else {
